@@ -1,0 +1,7 @@
+service: gitlab-ce-production-filestream
+input: filestream
+data_stream:
+  vars:
+    preserve_original_event: true
+    paths:
+      - '{{SERVICE_LOGS_DIR}}/*.log'
