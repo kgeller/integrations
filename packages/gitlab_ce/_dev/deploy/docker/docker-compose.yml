@@ -1,5 +1,5 @@
-version: 
-services: 
+version:
+services:
   gitlab-ce-production-filestream:
     image: alpine
     volumes:
