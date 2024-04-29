@@ -20,7 +20,6 @@ processors:
     field: event.original
     tag: json_original
     target_field: gitlab_ce.production
-    ignore_failure: true
 - rename:
     field: gitlab_ce.production.method
     target_field: http.request.method
@@ -96,9 +95,7 @@ processors:
             } else {
                 Map objParam = new HashMap();
                 objParam.put("key",param.key);
-                Map valueJson = new HashMap();
-                valueJson.put("json",param.value);
-                objParam.put("value", valueJson);
+                objParam.put("value_json",param.value);
                 paramList.add(objParam);
             }
         }
